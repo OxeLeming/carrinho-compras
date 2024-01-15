@@ -1,3 +1,7 @@
+//Começar sempre com o carrinho zerado
+let totalCarrinho = 0;
+limpar();
+
 //Selecionar o produto
 function adicionar(){
     var selecionado = document.getElementById("produto").value;
@@ -14,6 +18,13 @@ function adicionar(){
    <span class="texto-azul">${quantidade}x</span> ${produto} <span class="texto-azul">R$${subtotalProduto}</span>
  </section>`
 
- 
+  totalCarrinho = totalCarrinho + subtotalProduto;
+  document.getElementById('valor-total').textContent = `R$ ${totalCarrinho}`;
+  document.getElementById('quantidade').value = 0;
 }
 
+function limpar(){
+document.getElementById('valor-total').textContent = "R$ 0";
+document.getElementById('quantidade').value = 0;
+document.getElementById('lista-produtos').innerHTML = '';
+}
