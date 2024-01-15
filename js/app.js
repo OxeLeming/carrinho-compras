@@ -18,7 +18,7 @@ function adicionar() {
     //adicionar itens ao carrinho
     var carrinho = document.getElementById('lista-produtos');
     carrinho.innerHTML = carrinho.innerHTML + `<section class="carrinho__produtos__produto">
-    <span class="texto-azul">${quantidade}x</span> ${produto} <span class="texto-azul">R$${subtotalProduto}</span>
+    <span class="texto-azul">${parseInt(quantidade, 10).toString()}x</span> ${produto} <span class="texto-azul">R$${subtotalProduto}</span>
     </section>`
 
     totalCarrinho = totalCarrinho + subtotalProduto;
